@@ -6,9 +6,11 @@ import '@ramonak/react-excel/dist/index.css';
 const App = () => {
   const [initialData, setInitialData] = useState(undefined);
 
-  const handleUpload = async (e) => {
-    const readedData = await readFile(e);
-    setInitialData(readedData);
+  const handleUpload = (event) => {
+    const file = event.target.files[0];
+    readFile(file)
+      .then((readedData) => setInitialData(readedData))
+      .catch((error) => console.error(error));
   };
   return (
     <>

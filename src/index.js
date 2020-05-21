@@ -113,24 +113,12 @@ export const ReactExcel = ({ initialData }) => {
   );
 };
 
-export const readFile = (event) => {
-  const file = event.target.files[0];
+export const readFile = (file) => {
   var reader = new FileReader();
   return new Promise((resolve, reject) => {
     reader.onload = function (event) {
       var data = new Uint8Array(event.target.result);
       let readedData = XLSX.read(data, { type: 'array' });
-      // sheetNames = readedData.SheetNames
-      // result = sheetNames.map((name) => {
-      //   const ws = readedData.Sheets[name]
-      //   const dataParse = XLSX.utils.sheet_to_json(ws, {
-      //     header: 1,
-      //     defval: ''
-      //   })
-      //   return {
-      //     [name]: dataParse
-      //   }
-      // })
       resolve(readedData);
     };
     reader.readAsArrayBuffer(file);
