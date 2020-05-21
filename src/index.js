@@ -93,20 +93,21 @@ export const ReactExcel = ({ initialData }) => {
   return (
     <React.Fragment>
       <React.Fragment>
-        {sheetNames.map((name, idx) => (
-          <button
-            key={idx}
-            value={name}
-            onClick={(e) => handleClick(e, idx)}
-            className={activeSheet === idx ? `${styles.active}` : ''}
-          >
-            {name}
-          </button>
-        ))}
-          <table className={styles.tableStyles}>
-            {createTable(currentSheet)}
-          </table>
-        {/* )} */}
+        <div>
+          {sheetNames.map((name, idx) => (
+            <button
+              key={idx}
+              value={name}
+              onClick={(e) => handleClick(e, idx)}
+              className={activeSheet === idx ? `${styles.active}` : ''}
+            >
+              {name}
+            </button>
+          ))}
+        </div>
+        <table className={styles.tableStyles}>
+          {createTable(currentSheet)}
+        </table>
       </React.Fragment>
     </React.Fragment>
   );
