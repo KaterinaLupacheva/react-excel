@@ -1,10 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react';
 
-import { ExampleComponent } from '@ramonak/react-excel'
-import '@ramonak/react-excel/dist/index.css'
+import { ReactExcel, readFile, generateObjects } from '@ramonak/react-excel';
+import '@ramonak/react-excel/dist/index.css';
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
-}
+  const [initialData, setInitialData] = useState(undefined);
 
-export default App
+  const handleUpload = async (e) => {
+    const readedData = await readFile(e);
+    setInitialData(readedData);
+  };
+  return (
+    <>
+      <input type='file' accept='.xlsx' onChange={handleUpload} />
+      <ReactExcel initialData={initialData} />
+    </>
+  );
+};
+
+export default App;
