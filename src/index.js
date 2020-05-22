@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import XLSX from 'xlsx';
 import styles from './styles.module.css';
 
-export const ReactExcel = ({ initialData }) => {
+export const ReactExcel = ({ initialData, onSheetUpdate }) => {
   const [parsedData, setParsedData] = useState([]);
   const [currentSheet, setCurrentSheet] = useState({});
   const [sheetNames, setSheetNames] = useState([]);
@@ -59,6 +59,9 @@ export const ReactExcel = ({ initialData }) => {
       ...currentSheet,
       [Object.keys(currentSheet)[0]]: Object.values(currentSheet)[0]
     });
+    onSheetUpdate({
+      [Object.keys(currentSheet)[0]]: Object.values(currentSheet)[0]
+    });
   };
 
   const handleClick = (e, id) => {
@@ -66,6 +69,7 @@ export const ReactExcel = ({ initialData }) => {
       Object.keys(o).includes(e.target.value)
     );
     setCurrentSheet(sheet);
+    onSheetUpdate(sheet);
     setActiveSheet(id);
   };
 
@@ -85,6 +89,7 @@ export const ReactExcel = ({ initialData }) => {
       });
       setParsedData(result);
       setCurrentSheet(result[0]);
+      onSheetUpdate(result[0]);
     };
 
     initialData && setData();
