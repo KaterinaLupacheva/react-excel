@@ -16,13 +16,16 @@ const App = () => {
 
   const handleClick = () => {
     const result = generateObjects(currentSheet);
-    console.log(result)
-  }
+    console.log(result);
+  };
 
   return (
     <>
       <input type='file' accept='.xlsx' onChange={handleUpload} />
-      <ReactExcel initialData={initialData} onSheetUpdate={currentSheet => setCurrentSheet(currentSheet)}/>
+      <ReactExcel
+        initialData={initialData}
+        onSheetUpdate={(currentSheet) => setCurrentSheet(currentSheet)}
+      />
       <button onClick={handleClick}>CLICK</button>
     </>
   );

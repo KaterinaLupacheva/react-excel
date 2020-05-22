@@ -59,9 +59,10 @@ export const ReactExcel = ({ initialData, onSheetUpdate }) => {
       ...currentSheet,
       [Object.keys(currentSheet)[0]]: Object.values(currentSheet)[0]
     });
-    onSheetUpdate({
-      [Object.keys(currentSheet)[0]]: Object.values(currentSheet)[0]
-    });
+    onSheetUpdate &&
+      onSheetUpdate({
+        [Object.keys(currentSheet)[0]]: Object.values(currentSheet)[0]
+      });
   };
 
   const handleClick = (e, id) => {
@@ -69,7 +70,7 @@ export const ReactExcel = ({ initialData, onSheetUpdate }) => {
       Object.keys(o).includes(e.target.value)
     );
     setCurrentSheet(sheet);
-    onSheetUpdate(sheet);
+    onSheetUpdate && onSheetUpdate(sheet);
     setActiveSheet(id);
   };
 
@@ -89,7 +90,7 @@ export const ReactExcel = ({ initialData, onSheetUpdate }) => {
       });
       setParsedData(result);
       setCurrentSheet(result[0]);
-      onSheetUpdate(result[0]);
+      onSheetUpdate && onSheetUpdate(result[0]);
     };
 
     initialData && setData();
