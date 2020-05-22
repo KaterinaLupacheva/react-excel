@@ -1,13 +1,8 @@
 /* add css module styles here (optional) */
 
-.active{
-  background-color: aqua;
-}
-
 .tableStyles{
-  width: 80%;
-margin: 2rem auto;
-border-collapse: collapse;
+  margin: 2rem auto;
+  border-collapse: collapse;
 }
 
 th,

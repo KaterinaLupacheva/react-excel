@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import XLSX from 'xlsx';
 import styles from './styles.module.css';
 
-export const ReactExcel = ({ initialData, onSheetUpdate }) => {
+export const ReactExcel = (props) => {
+  const { initialData, onSheetUpdate } = props;
   const [parsedData, setParsedData] = useState([]);
   const [currentSheet, setCurrentSheet] = useState({});
   const [sheetNames, setSheetNames] = useState([]);
@@ -119,6 +121,11 @@ export const ReactExcel = ({ initialData, onSheetUpdate }) => {
   );
 };
 
+ReactExcel.propTypes = {
+  initialData: PropTypes.object,
+  onSheetUpdate: PropTypes.func
+};
+
 export const readFile = (file) => {
   var reader = new FileReader();
   return new Promise((resolve, reject) => {
@@ -131,6 +138,10 @@ export const readFile = (file) => {
   });
 };
 
+readFile.propTypes = {
+  file: PropTypes.object
+};
+
 export const generateObjects = (currentSheet) => {
   const rows = Object.values(currentSheet)[0];
   const keys = rows[0];
@@ -140,4 +151,8 @@ export const generateObjects = (currentSheet) => {
     result.push(Object.fromEntries(keys.map((_, i) => [keys[i], row[i]])));
   }
   return result;
+};
+
+generateObjects.propTypes = {
+  currentSheet: PropTypes.object
 };
