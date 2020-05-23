@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import { ReactExcel, readFile, generateObjects } from '@ramonak/react-excel';
 import '@ramonak/react-excel/dist/index.css';
+import './styles.css';
 
 const App = () => {
   const [initialData, setInitialData] = useState(undefined);
@@ -26,8 +27,9 @@ const App = () => {
       <ReactExcel
         initialData={initialData}
         onSheetUpdate={(currentSheet) => setCurrentSheet(currentSheet)}
+        activeSheetClassName={'active-sheet'}
       />
-      <button onClick={handleClick}>CLICK</button>
+      {initialData && <button onClick={handleClick}>CLICK</button>}
       {generatedObjects && (
         <textarea
           cols={50}

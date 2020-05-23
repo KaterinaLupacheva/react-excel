@@ -4,7 +4,7 @@ import XLSX from 'xlsx';
 import styles from './styles.module.css';
 
 export const ReactExcel = (props) => {
-  const { initialData, onSheetUpdate } = props;
+  const { initialData, onSheetUpdate, activeSheetClassName } = props;
   const [parsedData, setParsedData] = useState([]);
   const [currentSheet, setCurrentSheet] = useState({});
   const [sheetNames, setSheetNames] = useState([]);
@@ -107,7 +107,7 @@ export const ReactExcel = (props) => {
               key={idx}
               value={name}
               onClick={(e) => handleClick(e, idx)}
-              className={activeSheet === idx ? `${styles.active}` : ''}
+              className={activeSheet === idx ? `${activeSheetClassName}` : ''}
             >
               {name}
             </button>
@@ -123,7 +123,8 @@ export const ReactExcel = (props) => {
 
 ReactExcel.propTypes = {
   initialData: PropTypes.object,
-  onSheetUpdate: PropTypes.func
+  onSheetUpdate: PropTypes.func,
+  activeSheetClassName: PropTypes.string
 };
 
 export const readFile = (file) => {
