@@ -5,3 +5,9 @@
     border-radius: 10px;
     padding: 5px;
 }
+
+.button-group{
+    width: 60vw;
+    display: flex;
+    justify-content: space-evenly;
+}

@@ -4,7 +4,12 @@ import XLSX from 'xlsx';
 import styles from './styles.module.css';
 
 export const ReactExcel = (props) => {
-  const { initialData, onSheetUpdate, activeSheetClassName } = props;
+  const {
+    initialData,
+    onSheetUpdate,
+    activeSheetClassName,
+    sheetNamesWrapperClassName
+  } = props;
   const [parsedData, setParsedData] = useState([]);
   const [currentSheet, setCurrentSheet] = useState({});
   const [sheetNames, setSheetNames] = useState([]);
@@ -101,7 +106,7 @@ export const ReactExcel = (props) => {
   return (
     <React.Fragment>
       <React.Fragment>
-        <div>
+        <div className={sheetNamesWrapperClassName}>
           {sheetNames.map((name, idx) => (
             <button
               key={idx}
@@ -124,7 +129,8 @@ export const ReactExcel = (props) => {
 ReactExcel.propTypes = {
   initialData: PropTypes.object,
   onSheetUpdate: PropTypes.func,
-  activeSheetClassName: PropTypes.string
+  activeSheetClassName: PropTypes.string,
+  sheetNamesWrapperClassName: PropTypes.string
 };
 
 export const readFile = (file) => {
