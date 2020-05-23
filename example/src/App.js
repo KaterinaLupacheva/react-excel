@@ -29,6 +29,7 @@ const App = () => {
         onSheetUpdate={(currentSheet) => setCurrentSheet(currentSheet)}
         activeSheetClassName={'active-sheet'}
         sheetNamesWrapperClassName={'button-group'}
+        sheetNameButtonClassName={'sheet-name-button'}
       />
       {initialData && <button onClick={handleClick}>CLICK</button>}
       {generatedObjects && (

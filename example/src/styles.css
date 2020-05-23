@@ -1,13 +1,20 @@
+.button-group{
+    width: 60vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.sheet-name-button{
+    height: 30px;
+    border-radius: 10px;
+    padding: 5px;
+    color: rgb(86, 86, 231);
+}
+
 .active-sheet{
     background-color: rgb(86, 86, 231);
     color: rgb(219, 212, 212);
     height: 30px;
     border-radius: 10px;
     padding: 5px;
-}
-
-.button-group{
-    width: 60vw;
-    display: flex;
-    justify-content: space-evenly;
 }

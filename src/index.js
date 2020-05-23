@@ -8,7 +8,8 @@ export const ReactExcel = (props) => {
     initialData,
     onSheetUpdate,
     activeSheetClassName,
-    sheetNamesWrapperClassName
+    sheetNamesWrapperClassName,
+    sheetNameButtonClassName
   } = props;
   const [parsedData, setParsedData] = useState([]);
   const [currentSheet, setCurrentSheet] = useState({});
@@ -112,7 +113,9 @@ export const ReactExcel = (props) => {
               key={idx}
               value={name}
               onClick={(e) => handleClick(e, idx)}
-              className={activeSheet === idx ? `${activeSheetClassName}` : ''}
+              className={`${sheetNameButtonClassName} ${
+                activeSheet === idx ? `${activeSheetClassName}` : ''
+              }`}
             >
               {name}
             </button>
@@ -130,7 +133,8 @@ ReactExcel.propTypes = {
   initialData: PropTypes.object,
   onSheetUpdate: PropTypes.func,
   activeSheetClassName: PropTypes.string,
-  sheetNamesWrapperClassName: PropTypes.string
+  sheetNamesWrapperClassName: PropTypes.string,
+  sheetNameButtonClassName: PropTypes.string
 };
 
 export const readFile = (file) => {
