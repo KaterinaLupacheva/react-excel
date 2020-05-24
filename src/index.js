@@ -7,56 +7,57 @@ export const ReactExcel = (props) => {
   const {
     initialData,
     onSheetUpdate,
-    activeSheetClassName,
-    sheetNamesWrapperClassName,
-    sheetNameButtonClassName
+    reactExcelClassName,
+    activeSheetClassName
   } = props;
   const [parsedData, setParsedData] = useState([]);
-  const [currentSheet, setCurrentSheet] = useState({});
+  const [currentSheet, setCurrentSheet] = useState(undefined);
   const [sheetNames, setSheetNames] = useState([]);
   const [activeSheet, setActiveSheet] = useState(0);
 
-  const createTable = (sheet) => {
-    const sheetValues = Object.values(sheet);
-    return sheetValues.map((row) => {
-      return row.map((r, i) =>
-        i === 0 ? (
-          <thead key={i}>
-            <tr>
-              {Object.values(r).map((cell, idx) => (
-                <th
-                  key={idx}
-                  contentEditable
-                  suppressContentEditableWarning={true}
-                  onBlur={(e) => {
-                    updateSheet(e.currentTarget.textContent, i, idx);
-                  }}
-                >
-                  {cell}
-                </th>
-              ))}
-            </tr>
-          </thead>
-        ) : (
-          <tbody key={i}>
-            <tr>
-              {Object.values(r).map((cell, idx) => (
-                <td
-                  key={idx}
-                  contentEditable
-                  suppressContentEditableWarning={true}
-                  onBlur={(e) => {
-                    updateSheet(e.currentTarget.textContent, i, idx);
-                  }}
-                >
-                  {cell}
-                </td>
-              ))}
-            </tr>
-          </tbody>
-        )
-      );
-    });
+  const createTableHeader = (firstRow) => {
+    return (
+      <thead>
+        <tr>
+          {Object.values(firstRow).map((cell, idx) => (
+            <th
+              key={idx}
+              contentEditable
+              suppressContentEditableWarning={true}
+              onBlur={(e) => {
+                updateSheet(e.currentTarget.textContent, i, idx);
+              }}
+            >
+              {cell}
+            </th>
+          ))}
+        </tr>
+      </thead>
+    );
+  };
+
+  const createTableBody = (rowArray) => {
+    const rows = rowArray.slice(1);
+    return (
+      <tbody>
+        {rows.map((row, id) => (
+          <tr key={id}>
+            {row.map((cell, idx) => (
+              <td
+                key={idx}
+                contentEditable
+                suppressContentEditableWarning={true}
+                onBlur={(e) => {
+                  updateSheet(e.currentTarget.textContent, i, idx);
+                }}
+              >
+                {cell}
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    );
   };
 
   const updateSheet = (newValue, row, col) => {
@@ -105,27 +106,28 @@ export const ReactExcel = (props) => {
   }, [initialData]);
 
   return (
-    <React.Fragment>
-      <React.Fragment>
-        <div className={sheetNamesWrapperClassName}>
-          {sheetNames.map((name, idx) => (
-            <button
-              key={idx}
-              value={name}
-              onClick={(e) => handleClick(e, idx)}
-              className={`${sheetNameButtonClassName} ${
-                activeSheet === idx ? `${activeSheetClassName}` : ''
-              }`}
-            >
-              {name}
-            </button>
-          ))}
-        </div>
+    <div className={reactExcelClassName}>
+      <div>
+        {sheetNames.map((name, idx) => (
+          <button
+            key={idx}
+            value={name}
+            onClick={(e) => handleClick(e, idx)}
+            className={`${
+              activeSheet === idx ? `${activeSheetClassName}` : ''
+            }`}
+          >
+            {name}
+          </button>
+        ))}
+      </div>
+      {currentSheet && (
         <table className={styles.tableStyles}>
-          {createTable(currentSheet)}
+          {createTableHeader(Object.values(currentSheet)[0][0])}
+          {createTableBody(Object.values(currentSheet)[0])}
         </table>
-      </React.Fragment>
-    </React.Fragment>
+      )}
+    </div>
   );
 };
 
@@ -133,8 +135,7 @@ ReactExcel.propTypes = {
   initialData: PropTypes.object,
   onSheetUpdate: PropTypes.func,
   activeSheetClassName: PropTypes.string,
-  sheetNamesWrapperClassName: PropTypes.string,
-  sheetNameButtonClassName: PropTypes.string
+  reactExcelClassName: PropTypes.string
 };
 
 export const readFile = (file) => {

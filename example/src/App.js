@@ -28,8 +28,7 @@ const App = () => {
         initialData={initialData}
         onSheetUpdate={(currentSheet) => setCurrentSheet(currentSheet)}
         activeSheetClassName={'active-sheet'}
-        sheetNamesWrapperClassName={'button-group'}
-        sheetNameButtonClassName={'sheet-name-button'}
+        reactExcelClassName={'react-excel'}
       />
       {initialData && <button onClick={handleClick}>CLICK</button>}
       {generatedObjects && (
