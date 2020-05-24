@@ -1,24 +1,40 @@
-.react-excel .active-sheet{
-    background-color: rgb(86, 86, 231);
-    color: rgb(219, 212, 212);
-    height: 30px;
-    border-radius: 10px;
-    padding: 5px;
+.react-excel .active-sheet {
+  background-color: rgb(86, 86, 231);
+  color: rgb(219, 212, 212);
+  height: 30px;
+  border-radius: 10px;
+  padding: 5px;
 }
 
-.react-excel div{
-    width: 100vw;
-    display: flex;
-    justify-content: space-evenly;
+.react-excel div {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 2rem;
 }
 
-.react-excel div button{
-    height: 30px;
-    border-radius: 10px;
-    padding: 5px;
-    color: rgb(86, 86, 231);
+.react-excel div button {
+  height: 30px;
+  border-radius: 10px;
+  padding: 5px;
+  color: rgb(86, 86, 231);
 }
 
 .react-excel table tr:nth-child(even) {
-    background-color: #f2f2f2;
+  background-color: #f2f2f2;
+}
+
+.custom-button {
+  display: table;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  background-color: darkblue;
+  color: beige;
+  font-size: large;
+  text-transform: uppercase;
+}
+
+.text-area {
+  display: block;
+  margin: 2rem auto;
 }

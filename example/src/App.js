@@ -23,19 +23,38 @@ const App = () => {
 
   return (
     <>
-      <input type='file' accept='.xlsx' onChange={handleUpload} />
+      <input
+        type='file'
+        accept='.xlsx'
+        onChange={handleUpload}
+        id='upload'
+        style={{ display: 'none' }}
+      />
+      <label htmlFor='upload'>
+        <button
+          className='custom-button'
+          onClick={() => document.getElementById('upload').click()}
+        >
+          Upload
+        </button>
+      </label>
       <ReactExcel
         initialData={initialData}
         onSheetUpdate={(currentSheet) => setCurrentSheet(currentSheet)}
-        activeSheetClassName={'active-sheet'}
-        reactExcelClassName={'react-excel'}
+        activeSheetClassName='active-sheet'
+        reactExcelClassName='react-excel'
       />
-      {initialData && <button onClick={handleClick}>CLICK</button>}
+      {initialData && (
+        <button className='custom-button' onClick={handleClick}>
+          Transform
+        </button>
+      )}
       {generatedObjects && (
         <textarea
-          cols={50}
-          rows={15}
+          cols={70}
+          rows={30}
           defaultValue={JSON.stringify(generatedObjects, null, 2)}
+          className='text-area'
         />
       )}
     </>
