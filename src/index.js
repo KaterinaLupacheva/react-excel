@@ -144,7 +144,11 @@ export const readFile = (file) => {
     reader.onload = function (event) {
       var data = new Uint8Array(event.target.result);
       let readedData = XLSX.read(data, { type: 'array' });
-      resolve(readedData);
+      if (readedData) {
+        resolve(readedData);
+      } else {
+        reject({ message: 'Error reading file' });
+      }
     };
     reader.readAsArrayBuffer(file);
   });

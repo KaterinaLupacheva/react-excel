@@ -1,9 +1,6 @@
 .react-excel .active-sheet {
-  background-color: rgb(86, 86, 231);
-  color: rgb(219, 212, 212);
-  height: 30px;
-  border-radius: 10px;
-  padding: 5px;
+  background-color: #a1d6e2;
+  color: rgb(65, 65, 66);
 }
 
 .react-excel div {
@@ -13,14 +10,16 @@
 }
 
 .react-excel div button {
-  height: 30px;
+  border: 1px solid black;
   border-radius: 10px;
-  padding: 5px;
+  padding: 1rem 2rem;
   color: rgb(86, 86, 231);
+  cursor: pointer;
+  font-size: larger;
 }
 
 .react-excel table tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: #e6d8d8;
 }
 
 .custom-button {
@@ -28,10 +27,11 @@
   margin: 0 auto;
   border-radius: 10px;
   padding: 1rem 2rem;
-  background-color: darkblue;
+  background-color: #1995ad;
   color: beige;
   font-size: large;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .text-area {
