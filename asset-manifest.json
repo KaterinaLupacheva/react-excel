@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/@ramonak/react-excel/static/css/main.237dba81.chunk.css",
+    "main.js": "/@ramonak/react-excel/static/js/main.cbb20427.chunk.js",
+    "main.js.map": "/@ramonak/react-excel/static/js/main.cbb20427.chunk.js.map",
+    "runtime-main.js": "/@ramonak/react-excel/static/js/runtime-main.7aaf9204.js",
+    "runtime-main.js.map": "/@ramonak/react-excel/static/js/runtime-main.7aaf9204.js.map",
+    "static/js/2.59ae92cf.chunk.js": "/@ramonak/react-excel/static/js/2.59ae92cf.chunk.js",
+    "static/js/2.59ae92cf.chunk.js.map": "/@ramonak/react-excel/static/js/2.59ae92cf.chunk.js.map",
+    "index.html": "/@ramonak/react-excel/index.html",
+    "precache-manifest.be706df6c3056d4f7e2f028cace2c503.js": "/@ramonak/react-excel/precache-manifest.be706df6c3056d4f7e2f028cace2c503.js",
+    "service-worker.js": "/@ramonak/react-excel/service-worker.js",
+    "static/css/main.237dba81.chunk.css.map": "/@ramonak/react-excel/static/css/main.237dba81.chunk.css.map",
+    "static/js/2.59ae92cf.chunk.js.LICENSE.txt": "/@ramonak/react-excel/static/js/2.59ae92cf.chunk.js.LICENSE.txt",
+    "static/js/main.cbb20427.chunk.js.LICENSE.txt": "/@ramonak/react-excel/static/js/main.cbb20427.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7aaf9204.js",
+    "static/js/2.59ae92cf.chunk.js",
+    "static/css/main.237dba81.chunk.css",
+    "static/js/main.cbb20427.chunk.js"
+  ]
+}
