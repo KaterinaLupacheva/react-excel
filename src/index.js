@@ -132,7 +132,7 @@ export const ReactExcel = (props) => {
 };
 
 ReactExcel.propTypes = {
-  initialData: PropTypes.object,
+  initialData: PropTypes.object.isRequired,
   onSheetUpdate: PropTypes.func,
   activeSheetClassName: PropTypes.string,
   reactExcelClassName: PropTypes.string
@@ -155,7 +155,7 @@ export const readFile = (file) => {
 };
 
 readFile.propTypes = {
-  file: PropTypes.object
+  file: PropTypes.object.isRequired
 };
 
 export const generateObjects = (currentSheet) => {
@@ -170,5 +170,5 @@ export const generateObjects = (currentSheet) => {
 };
 
 generateObjects.propTypes = {
-  currentSheet: PropTypes.object
+  currentSheet: PropTypes.object.isRequired
 };
