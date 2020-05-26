@@ -1,6 +1,6 @@
 {
   "name": "@ramonak/react-excel",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "React component for excel sheet uploading, editing and data transformation to an array of objects",
   "author": "KaterinaLupacheva",
   "license": "MIT",
