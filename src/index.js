@@ -47,7 +47,7 @@ export const ReactExcel = (props) => {
                 contentEditable
                 suppressContentEditableWarning={true}
                 onBlur={(e) => {
-                  updateSheet(e.currentTarget.textContent, id, idx);
+                  updateSheet(e.currentTarget.textContent, id + 1, idx);
                 }}
               >
                 {cell}
