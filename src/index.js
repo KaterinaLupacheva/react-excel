@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import XLSX from 'xlsx';
-import styles from './styles.module.css';
 
 export const ReactExcel = (props) => {
   const {
@@ -122,7 +121,7 @@ export const ReactExcel = (props) => {
         ))}
       </div>
       {currentSheet && (
-        <table className={styles.tableStyles}>
+        <table>
           {createTableHeader(Object.values(currentSheet)[0][0])}
           {createTableBody(Object.values(currentSheet)[0])}
         </table>
@@ -132,7 +131,7 @@ export const ReactExcel = (props) => {
 };
 
 ReactExcel.propTypes = {
-  initialData: PropTypes.object.isRequired,
+  initialData: PropTypes.object,
   onSheetUpdate: PropTypes.func,
   activeSheetClassName: PropTypes.string,
   reactExcelClassName: PropTypes.string
