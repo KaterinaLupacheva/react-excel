@@ -1,10 +1,11 @@
 {
   "name": "@ramonak/react-excel",
-  "version": "1.0.0",
-  "description": "React component for excel sheet uploading, editing and exporting as array of objects",
+  "version": "0.0.1",
+  "description": "React component for excel sheet uploading, editing and data transformation to an array of objects",
   "author": "KaterinaLupacheva",
   "license": "MIT",
   "repository": "KaterinaLupacheva/react-excel",
+  "homepage": "https://katerinalupacheva.github.io/react-excel/",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",
@@ -49,6 +50,12 @@
   },
   "files": [
     "dist"
+  ],
+  "keywords": [
+    "react",
+    "excel upload",
+    "update excel",
+    "react excel api"
   ],
   "dependencies": {
     "xlsx": "^0.16.1"
