@@ -5,7 +5,7 @@ import './App.css';
 const App = () => {
   const [initialData, setInitialData] = useState(undefined);
   const [currentSheet, setCurrentSheet] = useState({});
-  const [generatedObjects, setGeneratedObjects] = useState(undefined);
+  const [generatedObjects, setGeneratedObjects] = useState([]);
 
   const handleUpload = (event) => {
     const file = event.target.files[0];
@@ -47,11 +47,12 @@ const App = () => {
           Transform
         </button>
       )}
-      {generatedObjects && (
+      {generatedObjects.length > 0 && (
         <textarea
           cols={70}
           rows={30}
-          defaultValue={JSON.stringify(generatedObjects, null, 2)}
+          value={JSON.stringify(generatedObjects, null, 2)}
+          readOnly
           className='text-area'
         />
       )}
