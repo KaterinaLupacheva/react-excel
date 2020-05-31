@@ -1,23 +1,22 @@
 {
   "files": {
-    "main.css": "/react-excel/static/css/main.a1606a6d.chunk.css",
-    "main.js": "/react-excel/static/js/main.eb806ce8.chunk.js",
-    "main.js.map": "/react-excel/static/js/main.eb806ce8.chunk.js.map",
-    "runtime-main.js": "/react-excel/static/js/runtime-main.231ce437.js",
-    "runtime-main.js.map": "/react-excel/static/js/runtime-main.231ce437.js.map",
-    "static/js/2.8145f3b5.chunk.js": "/react-excel/static/js/2.8145f3b5.chunk.js",
-    "static/js/2.8145f3b5.chunk.js.map": "/react-excel/static/js/2.8145f3b5.chunk.js.map",
+    "main.css": "/react-excel/static/css/main.b94fb00f.chunk.css",
+    "main.js": "/react-excel/static/js/main.0730de9a.chunk.js",
+    "main.js.map": "/react-excel/static/js/main.0730de9a.chunk.js.map",
+    "runtime-main.js": "/react-excel/static/js/runtime-main.c0ca675d.js",
+    "runtime-main.js.map": "/react-excel/static/js/runtime-main.c0ca675d.js.map",
+    "static/js/2.b9c8fe44.chunk.js": "/react-excel/static/js/2.b9c8fe44.chunk.js",
+    "static/js/2.b9c8fe44.chunk.js.map": "/react-excel/static/js/2.b9c8fe44.chunk.js.map",
     "index.html": "/react-excel/index.html",
-    "precache-manifest.127e787f1ec750e980b58f0cf7b41342.js": "/react-excel/precache-manifest.127e787f1ec750e980b58f0cf7b41342.js",
+    "precache-manifest.54827ae90dfd6d12b7a4c2e6b07198b6.js": "/react-excel/precache-manifest.54827ae90dfd6d12b7a4c2e6b07198b6.js",
     "service-worker.js": "/react-excel/service-worker.js",
-    "static/css/main.a1606a6d.chunk.css.map": "/react-excel/static/css/main.a1606a6d.chunk.css.map",
-    "static/js/2.8145f3b5.chunk.js.LICENSE.txt": "/react-excel/static/js/2.8145f3b5.chunk.js.LICENSE.txt",
-    "static/js/main.eb806ce8.chunk.js.LICENSE.txt": "/react-excel/static/js/main.eb806ce8.chunk.js.LICENSE.txt"
+    "static/css/main.b94fb00f.chunk.css.map": "/react-excel/static/css/main.b94fb00f.chunk.css.map",
+    "static/js/2.b9c8fe44.chunk.js.LICENSE.txt": "/react-excel/static/js/2.b9c8fe44.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.231ce437.js",
-    "static/js/2.8145f3b5.chunk.js",
-    "static/css/main.a1606a6d.chunk.css",
-    "static/js/main.eb806ce8.chunk.js"
+    "static/js/runtime-main.c0ca675d.js",
+    "static/js/2.b9c8fe44.chunk.js",
+    "static/css/main.b94fb00f.chunk.css",
+    "static/js/main.0730de9a.chunk.js"
   ]
 }
