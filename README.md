@@ -4,6 +4,10 @@
 
 [![NPM](https://img.shields.io/npm/v/@ramonak/react-excel.svg)](https://www.npmjs.com/package/@ramonak/react-excel) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)![npm bundle size](https://img.shields.io/bundlephobia/min/@ramonak/react-excel)![GitHub](https://img.shields.io/github/license/katerinalupacheva/react-excel)![npm](https://img.shields.io/npm/dw/@ramonak/react-excel)
 
+## Demo
+
+![demo](https://i.ibb.co/Qm3QPhb/react-excel-demo.gif)
+
 ## Install
 
 ```bash
