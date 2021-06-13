@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ReactExcel, readFile, generateObjects } from '@ramonak/react-excel';
 import './App.css';
+import useViewCounter from './useViewCounter.hook';
 
 const App = () => {
   const [initialData, setInitialData] = useState(undefined);
@@ -18,6 +19,8 @@ const App = () => {
     const result = generateObjects(currentSheet);
     setGeneratedObjects(result);
   };
+
+  useViewCounter();
 
   return (
     <div className='App'>
@@ -39,7 +42,7 @@ const App = () => {
       <ReactExcel
         initialData={initialData}
         onSheetUpdate={(currentSheet) => setCurrentSheet(currentSheet)}
-        activeSheetClassName='active-sheet'
+        activeSheetClassName=''
         reactExcelClassName='react-excel'
       />
       {initialData && (
